@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        laravel vue bootstrap vue
+        laravel vue bootstrap 
     </div>
 </template>
 
