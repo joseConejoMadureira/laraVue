@@ -3,15 +3,12 @@ estrutura em docker que Contempla container
 laravel 
 vuejs 
 mysql 
-
+bootstrap
 ### clone do repostorio do projeto DOCKER 
 ```
-git clone https://github.com/joseConejoMadureira/DOCKER.git
+git clone https://github.com/joseConejoMadureira/laraVue.git
 ```
-### diretorio  do projeto
-```
-cd  DOCKER
-```
+
 ### diretorio  do projeto laravue
 ```
 cd  laraVue
