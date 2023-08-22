@@ -13,7 +13,7 @@
       </thead>
       <tbody>
         <tr v-for="product in products" :key="product.id">
-            <td>{{ product.id }}</td>
+          <td>{{ product.id }}</td>
           <td>{{ product.name }}</td>
           <td>{{ product.price }}</td>
           <td>
@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     deleteProduct(id) {
-      this.axios
+      axios
         .delete(`http://localhost:8000/api/products/${id}`)
         .then((response) => {
           let i = this.products.map((data) => data.id).indexOf(id);
