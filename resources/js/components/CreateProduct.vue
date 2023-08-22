@@ -11,8 +11,10 @@
                     <div class="form-group">
                         <label>Detail</label>
                         <input type="text" class="form-control" v-model="product.detail">
+
                     </div>
-                    <button type="submit" class="btn btn-primary">Create</button>
+
+                    <button type="submit" class="btn btn-primary">Criar</button>
                 </form>
             </div>
         </div>

@@ -7,7 +7,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Detail</th>
+                <th>Price</th>
                 <!-- <th>Actions</th> -->
             </tr>
             </thead>
@@ -15,7 +15,7 @@
             <tr v-for="product in products" :key="product.id">
                 <td>{{ product.id }}</td>
                 <td>{{ product.name }}</td>
-                <td>{{ product.detail }}</td>
+                <td>{{ product.price }}</td>
                 <td>
                     <div class="btn-group" role="group">
                         <router-link :to="{name: 'edit', params: { id: product.id }}" class="btn btn-success">Edit</router-link>
@@ -32,7 +32,7 @@
     export default {
         data() {
             return {
-                products: []
+                products: [{"id":8,"name":"xbox 1","price":2500},{"id":9,"name":"xbox 2","price":2500},{"id":10,"name":"xbox 1","price":2500},{"id":11,"name":"xbox 2","price":2500}]
             }
         },
         created() {
@@ -40,6 +40,7 @@
                 .get('http://localhost:8000/api/products/')
                 .then(response => {
                     this.products = response.data;
+
                 });
         },
         methods: {
