@@ -1,15 +1,23 @@
 <template>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="collapse navbar-collapse">
-                <div class="navbar-nav">
-                    <router-link to="/" class="nav-item nav-link">Products List</router-link>
-                    <router-link to="/create" class="nav-item nav-link">Create Product</router-link>
-                </div>
-            </div>
-        </nav>
-        <router-view> </router-view>
-    </div>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li> <router-link to="/" class="nav-link">Products List</router-link></li>
+            <li><router-link to="/create" class="nav-link">Create Product</router-link></li>
+          </ul>
+        </div> <!-- fim .collapse -->
+      </div> <!-- fim .container -->
+    </nav>
+    <main>
+        <section class="container">
+            <router-view> </router-view>
+        </section>
+    </main>
+
+
+
+
 </template>
 
 <script>
