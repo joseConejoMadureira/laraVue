@@ -4,12 +4,12 @@
     <div class="row">
       <div class="col-md-6">
         <form @submit.prevent="addProduct">
-          <div class="form-group">
-            <label>Name</label>
+          <div class="form-group mb-3">
+            <label class="form-label">Name</label>
             <input type="text" class="form-control" v-model="product.name" />
           </div>
-          <div class="form-group">
-            <label>Price</label>
+          <div class="form-group mb-3">
+            <label class="form-label">Price</label>
             <input type="text" class="form-control" v-model="product.price" />
           </div>
 

@@ -8,6 +8,7 @@
           <th>ID</th>
           <th>Name</th>
           <th>Price</th>
+          <th>Action</th>
           <!-- <th>Actions</th> -->
         </tr>
       </thead>
@@ -32,6 +33,7 @@
       </tbody>
     </table>
   </div>
+
 </template>
 
 <script>
