@@ -10,7 +10,7 @@
           </div>
           <div class="form-group mb-3">
             <label class="form-label">Price</label>
-            <input type="text" class="form-control" v-model="product.price" />
+            <input type="number" class="form-control" v-model="product.price" />
           </div>
 
           <button type="submit" class="btn btn-primary">Criar</button>
