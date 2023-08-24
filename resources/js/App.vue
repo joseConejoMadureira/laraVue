@@ -1,22 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <div class="container">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li>
-            <router-link to="/" class="nav-link">Products List</router-link>
-          </li>
-          <li>
-            <router-link to="/create" class="nav-link"
-              >Create Product</router-link
-            >
-          </li>
-        </ul>
-      </div>
-      <!-- fim .collapse -->
-    </div>
-    <!-- fim .container -->
-  </nav>
+    <nav-comp></nav-comp>
   <main>
     <section class="container">
       <router-view> </router-view>
@@ -28,8 +11,8 @@
 
 <script>
 import footerComp from './components/Footer.vue';
-
+import navComp from './components/Nav.vue'
 export default {
 
-  components: { footerComp }};
+  components: { footerComp,navComp}};
 </script>
