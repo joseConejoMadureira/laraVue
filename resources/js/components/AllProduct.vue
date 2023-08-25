@@ -10,7 +10,7 @@
                     paginate:{ first:'Primero',previous:'Anterior',next:'Siguiente',last:'Último'}
                 }, buttons:botones}" >
                     <thead>
-                        <tr><th>#</th><th>NOMBRE</th><th>DESCRIPCION</th><th>PRECIO</th></tr>
+                        <tr><th>#</th><th>Name</th><th>Price</th></tr>
                     </thead>
                 </DataTable>
             </div>
@@ -39,7 +39,6 @@ export default{
                 {data:null, render: function(data,type,row,meta)
                 {return `${meta.row+1}`}},
                 {data:'name'},
-                {data:'description'},
                 {data: null, render: function(data,type,row,meta)
                 {return ('$'+ new Intl.NumberFormat('es-mx').format(data.price))}}
             ],
