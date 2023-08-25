@@ -4,11 +4,11 @@
             <div class="table-responsive">
                 <DataTable :data="products" :columns="columns" class="table table-striped table-bordered display"
                 :options="{responsive:true,autoWidth:false, dom:'Bfrtip',language:{
-                    search:'Buscar', zeroRecords:'No hay registros para mostrar',
-                    info: 'Mostrando del _START_ a _END_ de _TOTAL_ resgistros',
+                    search:'Buscar', zeroRecords:'Não há registros',
+                    info: 'Mostrando inicio a _END_ de _TOTAL_ resgistros',
                     infoFiltered: '(Filtrados de _MAX_ registros.)',
-                    paginate:{ first:'Primero',previous:'Anterior',next:'Siguiente',last:'Último'}
-                }, buttons:botones}" >
+                    paginate:{ first:'Primero',previous:'Anterior',next:'Seguinte',last:'Último'}
+                }}" >
                     <thead>
                         <tr><th>#</th><th>Name</th><th>Price</th></tr>
                     </thead>
@@ -21,15 +21,11 @@
 import axios from 'axios';
 import DataTable from 'datatables.net-vue3';
 import DataTableLib from 'datatables.net-bs5'
-import Buttons from 'datatables.net-buttons-bs5'
-import ButtonsHtml5 from 'datatables.net-buttons/js/buttons.html5'
-import print from 'datatables.net-buttons/js/buttons.print'
 
 import 'datatables.net-responsive-bs5';
-import JsZip from 'jszip';
-window.JSZip = JsZip;
+
 DataTable.use(DataTableLib);
-DataTable.use(ButtonsHtml5);
+
 export default{
     components: {DataTable},
     data(){
@@ -42,32 +38,7 @@ export default{
                 {data: null, render: function(data,type,row,meta)
                 {return ('$'+ new Intl.NumberFormat('es-mx').format(data.price))}}
             ],
-            botones: [
-                {
-                    title:'Reporte de productos',
-                    extend:'excelHtml5',
-                    text: '<i class="fa-solid fa-file-excel"></i> Excel',
-                    className:'btn btn-success'
-                },
-                {
-                    title:'Reporte de productos',
-                    extend:'pdfHtml5',
-                    text: '<i class="fa-solid fa-file-pdf"></i> PDF',
-                    className:'btn btn-danger'
-                },
-                {
-                    title:'Reporte de productos',
-                    extend:'print',
-                    text: '<i class="fa-solid fa-print"></i> Imprimir',
-                    className:'btn btn-dark'
-                },
-                {
-                    title:'Reporte de productos',
-                    extend:'copy',
-                    text: '<i class="fa-solid fa-copy"></i> Copiar texto',
-                    className:'btn btn-light'
-                }
-            ]
+
         }
     },
     mounted(){
