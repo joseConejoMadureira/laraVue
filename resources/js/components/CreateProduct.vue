@@ -2,7 +2,7 @@
 
     <h3 class="text-center">Create Product</h3>
     <div class="row justify-content-md-center">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <form @submit.prevent="addProduct">
           <div class="form-group mb-3">
             <label class="form-label">Name</label>
