@@ -1,7 +1,7 @@
 <template>
   <nav-comp></nav-comp>
   <main>
-    <section class="container">
+    <section>
       <router-view> </router-view>
     </section>
   </main>
@@ -16,4 +16,8 @@ export default {
 };
 </script>
 
-
+<style>
+section{
+ margin-top: 1%;
+}
+</style>

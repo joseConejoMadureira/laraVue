@@ -1,7 +1,7 @@
 <template>
-  <div>
+
     <h3 class="text-center">Create Product</h3>
-    <div class="row">
+    <div class="row justify-content-md-center">
       <div class="col-md-6">
         <form @submit.prevent="addProduct">
           <div class="form-group mb-3">
@@ -16,7 +16,7 @@
           <button type="submit" class="btn btn-primary">Criar</button>
         </form>
       </div>
-    </div>
+
   </div>
 </template>
 
