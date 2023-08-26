@@ -1,68 +1,121 @@
 <template>
-  <div>
-    <h2 class="text-center">Products List</h2>
 
-    <div class="table-responsive-sm">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Action</th>
-            <!-- <th>Actions</th> -->
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="product in products" :key="product.id">
-            <th scope="row">{{ product.id }}</th>
 
-            <td>{{ product.name }}</td>
-            <td>{{ product.price }}</td>
-            <td>
-              <div class="btn-group" role="group">
-                <router-link
-                  :to="{ name: 'edit', params: { id: product.id } }"
-                  class="btn btn-success"
-                  >Edit</router-link
-                >
-                <button
-                  class="btn btn-danger"
-                  @click="deleteProduct(product.id)"
-                >
-                  Delete
-                </button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</template>
+    <v-data-table
+      v-model:items-per-page="itemsPerPage"
+      :headers="headers"
+      :items="desserts"
+      item-value="name"
+      class="elevation-1"
+    ></v-data-table>
+  </template>
 
 <script>
-import axios from "axios";
+import { VDataTable } from 'vuetify/labs/VDataTable'
+
 export default {
-  data() {
+    components: {
+    VDataTable
+  },
+  data () {
     return {
-      products: [],
-    };
+      itemsPerPage: 5,
+      headers: [
+        {
+          title: 'Dessert (100g serving)',
+          align: 'start',
+          sortable: false,
+          key: 'name',
+        },
+        { title: 'Calories', align: 'end', key: 'calories' },
+        { title: 'Fat (g)', align: 'end', key: 'fat' },
+        { title: 'Carbs (g)', align: 'end', key: 'carbs' },
+        { title: 'Protein (g)', align: 'end', key: 'protein' },
+        { title: 'Iron (%)', align: 'end', key: 'iron' },
+      ],
+      desserts: [
+        {
+          name: 'Frozen Yogurt',
+          calories: 159,
+          fat: 6.0,
+          carbs: 24,
+          protein: 4.0,
+          iron: '1',
+        },
+        {
+          name: 'Jelly bean',
+          calories: 375,
+          fat: 0.0,
+          carbs: 94,
+          protein: 0.0,
+          iron: '0',
+        },
+        {
+          name: 'KitKat',
+          calories: 518,
+          fat: 26.0,
+          carbs: 65,
+          protein: 7,
+          iron: '6',
+        },
+        {
+          name: 'Eclair',
+          calories: 262,
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          iron: '7',
+        },
+        {
+          name: 'Gingerbread',
+          calories: 356,
+          fat: 16.0,
+          carbs: 49,
+          protein: 3.9,
+          iron: '16',
+        },
+        {
+          name: 'Ice cream sandwich',
+          calories: 237,
+          fat: 9.0,
+          carbs: 37,
+          protein: 4.3,
+          iron: '1',
+        },
+        {
+          name: 'Lollipop',
+          calories: 392,
+          fat: 0.2,
+          carbs: 98,
+          protein: 0,
+          iron: '2',
+        },
+        {
+          name: 'Cupcake',
+          calories: 305,
+          fat: 3.7,
+          carbs: 67,
+          protein: 4.3,
+          iron: '8',
+        },
+        {
+          name: 'Honeycomb',
+          calories: 408,
+          fat: 3.2,
+          carbs: 87,
+          protein: 6.5,
+          iron: '45',
+        },
+        {
+          name: 'Donut',
+          calories: 452,
+          fat: 25.0,
+          carbs: 51,
+          protein: 4.9,
+          iron: '22',
+        },
+      ],
+    }
   },
-  created() {
-    axios
-      .get("http://localhost:8000/api/products/")
-      .then((response) => (this.products = response.data));
-  },
-  methods: {
-    deleteProduct(id) {
-      axios
-        .delete(`http://localhost:8000/api/products/${id}`)
-        .then((response) => {
-          let i = this.products.map((data) => data.id).indexOf(id);
-          this.products.splice(i, 1);
-        });
-    },
-  },
-};
+}
 </script>
