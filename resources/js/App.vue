@@ -5,7 +5,6 @@
       <router-view> </router-view>
     </section>
   </main>
-  <v-btn size="x-large">X-Large Button</v-btn>
   <footerComp> </footerComp>
 </template>
 
