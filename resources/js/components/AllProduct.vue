@@ -56,6 +56,7 @@ export default {
         { title: "Carbs (g)", key: "carbs" },
         { title: "Protein (g)", key: "protein" },
         { title: "Iron (%)", key: "iron" },
+        { title: "Action", key: "action" },
       ],
       desserts: [
         {
