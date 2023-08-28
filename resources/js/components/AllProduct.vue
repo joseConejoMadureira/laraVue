@@ -1,6 +1,20 @@
 <template>
+     <v-card>
+    <v-card-title>
+      Busca
+      <v-spacer></v-spacer>
+      <v-text-field
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Busca"
+        single-line
+        hide-details
+      ></v-text-field>
+    </v-card-title>
+
     <v-data-table
       v-model:page="page"
+      :search="search"
       :headers="headers"
       :items="desserts"
       :items-per-page="itemsPerPage"
@@ -17,6 +31,7 @@
         </div>
       </template>
     </v-data-table>
+    </v-card>
   </template>
 <script>
 import { VDataTable } from "vuetify/labs/VDataTable";
@@ -27,8 +42,10 @@ export default {
   data () {
 
     return {
+
       page: 1,
       itemsPerPage: 5,
+      search: '',
       headers: [
         {
           align: 'start',
