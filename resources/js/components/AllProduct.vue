@@ -1,5 +1,7 @@
 <template>
-     <v-card>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+   <v-card>
     <v-card-title>
       Busca
       <v-spacer></v-spacer>
@@ -32,6 +34,8 @@
       </template>
     </v-data-table>
     </v-card>
+    </div>
+    </div>
   </template>
 <script>
 import { VDataTable } from "vuetify/labs/VDataTable";
