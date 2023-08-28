@@ -28,6 +28,10 @@
               <v-pagination v-model="page" :length="pageCount"></v-pagination>
             </div>
           </template>
+          <template v-slot:item.actions="{ item }">
+            <v-icon small class="mr-2" >mdi-pencil</v-icon>
+            <v-icon small >mdi-delete</v-icon>
+          </template>
         </v-data-table>
       </v-card>
     </div>
@@ -35,11 +39,14 @@
 </template>
 <script>
 import { VDataTable } from "vuetify/labs/VDataTable";
+
+
 export default {
   components: {
-    VDataTable,
+    VDataTable
   },
   data() {
+
     return {
       page: 1,
       itemsPerPage: 5,
@@ -56,7 +63,7 @@ export default {
         { title: "Carbs (g)", key: "carbs" },
         { title: "Protein (g)", key: "protein" },
         { title: "Iron (%)", key: "iron" },
-        { title: "Action", key: "action" },
+        { title: "actions", key: "actions", sortable: false },
       ],
       desserts: [
         {
