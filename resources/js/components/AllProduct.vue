@@ -54,9 +54,9 @@ export default {
       search: "",
       headers: [
         { title: "id", key: "id" },
-        { title: "name", key: "name" },
-        { title: "price", key: "price" },
-        { title: "actions", key: "actions", sortable: false },
+        { title: "nome", key: "name" },
+        { title: "preço", key: "price" },
+        { title: "ações", key: "actions", sortable: false },
       ],
       products: [],
     };
