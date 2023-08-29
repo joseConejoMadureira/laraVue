@@ -33,7 +33,7 @@
             <v-icon small class="mr-2" @click="edit(item.raw.id)"
               >mdi-pencil</v-icon
             >
-            <v-icon small>mdi-delete</v-icon>
+            <v-icon small @click="deleteProduct(item.raw.id)">mdi-delete</v-icon>
           </template>
         </v-data-table>
       </v-card>
@@ -72,6 +72,14 @@ export default {
 
       this.$router.push({ name: "edit", params: { id: id } });
     },
+    deleteProduct(id) {
+      axios
+        .delete(`http://localhost:8000/api/products/${id}`)
+        .then((response) => {
+          let i = this.products.map((data) => data.id).indexOf(id);
+          this.products.splice(i, 1);
+        });
+    }
   },
   computed: {
     pageCount() {
