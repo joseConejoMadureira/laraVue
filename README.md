@@ -20,12 +20,14 @@ sudo su
 
 ### cria e inicia os containers 
 ```
-docker-compose exec web cp .env.example .env
-```
-### cria e inicia os containers 
-```
 docker-compose up -d
 ```
+### copia env.example (arquivo de configuração)
+ 
+```
+docker-compose exec web cp .env.example .env
+```
+
 ### instalação das dependencias php 
 ```
 docker-compose exec web composer install
