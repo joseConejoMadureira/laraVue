@@ -13,7 +13,15 @@ git clone https://github.com/joseConejoMadureira/laraVue.git
 ```
 cd  laraVue
 ```
+### usuarios com privilégios
+```
+sudo su
+```
 
+### cria e inicia os containers 
+```
+docker-compose exec web cp .env.example .env
+```
 ### cria e inicia os containers 
 ```
 docker-compose up -d
@@ -21,6 +29,10 @@ docker-compose up -d
 ### instalação das dependencias php 
 ```
 docker-compose exec web composer install
+```
+### chave de app laravel 
+```
+docker-compose exec web php artisan key:generate 
 ```
 ### instalação das migrates 
 ```
