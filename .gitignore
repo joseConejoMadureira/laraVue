@@ -20,3 +20,4 @@ yarn-error.log
 .composer
 .npm
 package-lock.json
+yarn.lock
