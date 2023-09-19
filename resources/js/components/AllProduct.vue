@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       page: 1,
-      itemsPerPage: 5,
+      itemsPerPage: 4,
       search: "",
       headers: [
         { title: "id", key: "id" },

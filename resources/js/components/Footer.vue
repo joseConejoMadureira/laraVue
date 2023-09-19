@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-secondary pt-4 pb-4">
     <div class="container d-flex justify-content-between align-items-center">
-      <span> © 2023 Todos os direitos reservados </span>
+      <span> José Antonio Conejo madureira </span>
 
       <ul class="social">
         <li>
@@ -27,8 +27,8 @@ export default {};
   <style>
 .social a {
   display: block;
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   text-indent: -9999px;
 }
 
@@ -39,13 +39,13 @@ export default {};
 #linkedin
 {
   background: url(../assets/icone-linkedin.png);
-  background-size: 36px 36px;
+  background-size: 28px 28px;
 }
 
 #github
 {
   background: url(../assets/icone-github.png);
-  background-size: 36px 36px;
+  background-size: 28px 28px;
 }
 footer {
   position: absolute;
